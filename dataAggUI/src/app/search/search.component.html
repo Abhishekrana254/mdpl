@@ -1,0 +1,196 @@
+<!-- <p>search works!</p> -->
+
+<div class='container'>
+  <div class="wrap">
+    <div class="search">
+       <input type="text" #query name="query" class="form-control" placeholder="What are you looking for?">
+       <button type="submit" class="searchButton" (click)="search(query.value);">
+         <!-- <i class="fa fa-search"></i> -->
+      </button>
+    </div>
+  </div>
+
+  <div class='companies content'>
+    <p>Find the best offer from <b>100+ data providers</b> worldwide.</p>
+    <!-- <br> -->
+    <img src='https://datarade.ai/packs/media/images/logowall-8be21052d14a5adf53b42f81834ff76e.png'>
+  </div>
+  <div class='perks content'>
+    <!-- Perks -->
+    <div>
+        <img src='https://datarade.ai/packs/media/images/landing_page/check-23caf976f22abfb864e8a35aa3b68b25.svg'>
+        <h2>
+          Save months of research
+        </h2>
+        <span>Get in-depth information about 2,000+ data providers curated across 210 data categories.</span>
+    </div>
+    <div>
+      <img src='https://datarade.ai/packs/media/images/landing_page/star-fcfa839a42663facb7038246e4423ef0.svg'>
+      <h2>
+        Get free expert advice.
+      </h2>
+      <span>Our experts advise and guide you through the whole sourcing process - free of charge.</span>
+    </div>
+    <div>
+      <img src='https://datarade.ai/packs/media/images/landing_page/star-fcfa839a42663facb7038246e4423ef0.svg'>
+      <h2>
+        Choose with confidence.
+      </h2>
+      <span>Find the right data that really fits with your goals, use cases, and key requirements.</span>
+    </div>
+  </div>
+  <div class='how-it-works content'>
+    <div class='how-it-works-header chakra'>
+      <h2 class='header'>How it works</h2>
+    </div>
+    <!-- <h2 class='header'>How it works</h2> <br> -->
+    <div class='how-it-works-content chakra'>
+      <div class='step-box'>
+        <p class="counter"><span>1</span></p>
+        <h2>
+          Tell us about your need
+        </h2>
+        <span>Briefly describe your goals, use cases, and data requirements.</span>
+      </div>
+      <div class='step-box'>
+        <p class="counter"><span>2</span></p>
+        <h2>
+          Get data recommendations
+        </h2>
+        <span>Receive a shortlist of suitable data providers by our experts.</span>
+      </div>
+      <div class='step-box'>
+        <p class="counter"><span>3</span></p>
+        <h2>
+          Make a confident choice
+        </h2>
+        <span>Compare data offerings and choose when you’re ready.</span>
+      </div>
+    </div>
+    
+  </div>
+  <div class='faqs content'>
+    <div class='faq-header faq-divs'>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class='faq-content faq-divs'>
+      <div class='faq-divs-q'>
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Doe We offer free, open, or public data?
+              </mat-panel-title>
+              <mat-panel-description>
+                <!-- Does Datarade offer free, open, or public data? -->
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>No, all data products listed on here have commercially-supported licenses. If you want to use data for business critical applications, we highly recommend purchasing data with a commercial license and support. If you’re looking for open data, we recommend you to have a look at Kaggle or open data portals like Data.gov.
+            </p>
+          </mat-expansion-panel>
+        </mat-accordion>        
+      </div>
+
+      <div class='faq-divs-q'>
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Is data comparison service really free?
+              </mat-panel-title>
+              <mat-panel-description>
+                <!-- Does Datarade offer free, open, or public data? -->
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>Yes, our online platform and expert advice are 100% free for data buyers.
+            </p>
+          </mat-expansion-panel>
+        </mat-accordion> 
+      </div>
+
+      <div class='faq-divs-q'>
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                How do you make money if your services are free?
+              </mat-panel-title>
+              <mat-panel-description>
+                <!-- Does Datarade offer free, open, or public data? -->
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>In case you’re happy with our services and decide to purchase a recommended data offering, we receive a commission fee from our data provider partners. That way, you don’t have to pay for anything upfront and get free and independent expert advice.
+            </p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+
+      <!-- <div class='faq-divs-q'>
+        Why should I use Datarade to get in touch with data providers?
+      </div>
+      <div class='faq-divs-q'>
+        What data types can I find on Datarade?
+      </div>
+      <div class='faq-divs-q'>
+        How to buy commercial data online?
+      </div> -->
+    </div>
+  </div>
+  <div class='links content'>
+    <!-- Links  -->
+    <b>Contact Us: </b>
+    <br>
+    <table >
+      <tr>
+        <td>
+          Email: 
+        </td>
+        <td>
+          support@mdpl.com
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Phone: 
+        </td>
+        <td>
+          9399013937
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+<!-- 
+ <a [routerLink]="['/description']" [queryParams]="{ data_id : '1', data_name: 'healthcare_data_1' }">
+   State Details 
+</a> -->
+
+<!-- <div *ngIf="data_list">
+  <div *ngFor="let data of data_list">
+    <mat-card style="width: 20rem;">
+       <mat-card-content>
+         <mat-card-title>
+           <h5> {{data.id}}. {{data.name}}</h5>
+         </mat-card-title>
+         <mat-card-subtitle>{{data.name}}</mat-card-subtitle>
+         
+         <a [routerLink]="['/description']" [queryParams]="{ id : data.id, name: data.name,
+           file_name: data.file_name }" 
+         mdbBtn color="primary" >
+          Data Description 
+       </a>
+       </mat-card-content>
+     </mat-card>
+ </div>
+</div> -->
+
+<!-- <a href="#!" mdbBtn color="primary">Go somewhere</a> -->
+
+<!-- <div *ngFor="let content of data_list">
+  <a [routerLink]="['/description']" [queryParams]="{ data_id : '1', data_name: 'healthcare_data_1' }" 
+  mdbBtn color="primary" >
+  Data Description 
+  </a>
+</div> -->

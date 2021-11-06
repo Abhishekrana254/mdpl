@@ -1,0 +1,60 @@
+<!-- <p>description works!</p> -->
+<p style='margin-left: 20px; margin-top: 20px;' class='strong_'>
+    <b> {{id}} . 
+        {{name}} </b>
+        <br><br>
+        <button (click)='download()' [disabled]="!download_data_status" >Download Data</button>
+</p>
+
+
+<br><br>
+
+<div style="margin-left: 20px;" class='strong_'>
+    <p><strong>Request call for downloading data </strong> </p>
+
+    <form [formGroup]="requestCallForm" (ngSubmit)="onSubmit()">
+
+        <table>
+            <tr>
+                <td>
+                    <label for="email">Email : </label>
+                </td>
+                <td>
+                    <input id="email" type="text" formControlName="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="phoneNumber">Phone Number: </label>
+                </td>
+                <td>
+                    <input id="phoneNumber" type="text" formControlName="phoneNumber">
+                </td>
+            </tr>
+        </table>
+
+
+        <br>
+        <!-- <p>Complete the form to enable button.</p> -->
+        <button class='' type="submit" [disabled]="!requestCallForm.valid">Submit</button>
+    </form>
+</div>
+<br><br>
+
+<div style="margin-left: 20px;" class='strong_'>
+    <p><strong>Request for chat </strong> </p>
+    <i class='fas fa-comment' style='font-size:24px' (click)="openChat()"></i>
+</div>
+
+
+<div class="chat-popup" id="chatWindow">
+    <form action="/" class="form-container">
+      <h1>Chat</h1>
+  
+      <label for="msg"><b>Message</b></label>
+      <textarea placeholder="Type message.." name="msg" required></textarea>
+  
+      <button type="submit" class="btn">Send</button>
+      <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
+    </form>
+  </div>

@@ -1,0 +1,739 @@
+<!-- <p>default works!</p> -->
+<mat-toolbar color='primary'>
+    <mat-toolbar-row>
+        <!-- <button mat-icon-button (click)='toggleSideBar()'>
+            <mat-icon>menu</mat-icon>
+        </button> -->
+
+        <span> 
+          <!-- <a [routerLink]="['/']" ></a> -->
+          <h1 class='home-button' (click)='goToHome()'>MDPL</h1>
+        </span>
+
+        <div fxFlex fxLayout='row' fxLayoutAlign='flex-end'>
+            <ul fxLayout='row' fxLayoutGap='20 px'>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>help_outline</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                    <!-- <button mat-menu-item (click)='logout()'>
+                        <mat-icon>exit_to_app</mat-icon>
+                        Sign out
+                    </button> -->
+                    <amplify-sign-out> </amplify-sign-out>
+                    <!-- <button mat-menu-item>
+                        <mat-icon>face</mat-icon>
+                        just chill
+                    </button> -->
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row >
+    
+    <!-- <div fxFlex fxLayout='row' fxLayoutAlign='flex-end' class='navbar-bottom'>
+      <ul fxLayout='row' fxLayoutGap='20 px'>
+      </ul>
+    </div> -->
+    <mat-toolbar-row class='toolbar-bottom'>
+
+      <div class='container'>
+        
+
+        <div class="left-toolbar-bottom">
+          <div class='toolbar-bottom-item'>
+              Data Categories
+              <i class="arrow down"></i>
+          </div>
+          <div class='toolbar-bottom-item' (click)='listData()'>
+            <span>List your Data</span>
+          </div>
+        </div>
+
+        <div class='right-toolbar-bottom'>
+          <div class='toolbar-bottom-item'>
+            <span>Inquiries</span>
+          </div>
+          <div class='toolbar-bottom-item'>
+            <span>Postings</span>
+          </div>
+          <div class='toolbar-bottom-item'>
+            <span>Orders</span>
+          </div>
+          <div class='toolbar-bottom-item' (click)='goToConversations()'>
+            <span>Messages</span>
+          </div>
+          <div class='toolbar-bottom-item'>
+            <span>Sign in /Join</span>
+          </div>
+        </div>
+
+      </div>
+    
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+<!-- <div class='navbarBottom'>
+    Hello
+
+    <div class="container">
+        <div class="navbar__menu-burger-btn no-tap-highlight" data-controller="slide-in-toggle" data-slide-in-target=".navbar__mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    
+        <nav class="navbar__mobile-menu">
+      <div class="slide-in__header">
+        <a href="/">
+          <img class="datarade-logo" alt="Logo of Datarade" src="/packs/media/images/logo-d00b9c47236fd77f6eb1cdf61b3f1134.svg">
+    </a>    <a class="slide-in__close-btn" href="#"><i class="feather icon icon-x m-none"></i></a>
+      </div>
+    
+      <a class="navbar__item only-tablet active" aria-current="page" href="/"><div class="navbar__item-content"><span class="navbar__item-title">Home</span></div></a>
+    
+    
+      <div class="navbar__item navbar__sub-menu-toggle navbar__mega-menu" data-controller="sub-menu-toggle"><div class="navbar__item-content"><span class="navbar__item-title">    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2.5 7.25C2.08579 7.25 1.75 7.58579 1.75 8C1.75 8.41421 2.08579 8.75 2.5 8.75V7.25ZM9.5 8.75C9.91421 8.75 10.25 8.41421 10.25 8C10.25 7.58579 9.91421 7.25 9.5 7.25V8.75ZM2.5 8.75H9.5V7.25H2.5V8.75Z" fill="#1371C3"></path>
+    <path d="M2.5 12.25C2.08579 12.25 1.75 12.5858 1.75 13C1.75 13.4142 2.08579 13.75 2.5 13.75V12.25ZM14.5 13.75C14.9142 13.75 15.25 13.4142 15.25 13C15.25 12.5858 14.9142 12.25 14.5 12.25V13.75ZM2.5 13.75H14.5V12.25H2.5V13.75Z" fill="#1371C3"></path>
+    <path d="M2.5 2.25C2.08579 2.25 1.75 2.58579 1.75 3C1.75 3.41421 2.08579 3.75 2.5 3.75V2.25ZM14.5 3.75C14.9142 3.75 15.25 3.41421 15.25 3C15.25 2.58579 14.9142 2.25 14.5 2.25V3.75ZM2.5 3.75H14.5V2.25H2.5V3.75Z" fill="#1371C3"></path>
+    </svg>
+    
+        Data Categories
+    </span></div><div class="navbar__sub-menu">
+          <div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/geospatial-data">Geospatial Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/location-data">Location Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/point-of-interest-poi-data">Point of Interest (POI) Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/map-data">Map Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/satellite-data">Satellite Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/cell-tower-data">Cell Tower Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/gis-data">GIS Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/geographic-data">Geographic Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/mobility-data">Mobility Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/geodemographic-data">Geodemographic Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/retail-commerce-data">Commerce Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/transaction-data">Transaction Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/retail-data">Retail Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/ecommerce-data">Ecommerce Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/receipt-data">Receipt Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/consumer-review-data">Consumer Review Data </a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/consumer-spending-data">Consumer Spending Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/shopper-data">Shopper Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/product-data">Product Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/in-store-data">In-store Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/brand-data">Brand Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/o2o-commerce-data">O2O Commerce Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/brand-sentiment-data">Brand Sentiment Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/financial-market-data-a6263770-50ab-41c0-85ec-af7395af2d8b">Financial Market Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/esg-data">ESG Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/alternative-data">Alternative Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/proprietary-market-data">Proprietary Market Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/real-time-market-data">Real-Time Market Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/delayed-market-data">Delayed Market Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/equity-market-data">Equity Market Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/share-market-data">Share Market Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/stock-market-data">Stock Market Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/reference-data">Reference Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/commodity-data">Commodity Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/currency-data">Currency Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/implied-volatility-data">Implied Volatility Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/fixed-income-data">Fixed Income Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/derivatives-data">Derivatives Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/consumer-data">Consumer Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/demographic-data">Demographic Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/marketing-data">Marketing Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/audience-data">Audience Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/ownership-data">Ownership Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/psychographic-data">Psychographic Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/social-media-data">Social Media Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/consumer-purchase-data">Consumer Purchase Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/consumer-finance-data">Consumer Finance Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/consumer-panel-data">Consumer Panel Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/consented-consumer-data">Consented Consumer Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/household-level-consumer-data">Household-Level Consumer Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/individual-level-consumer-data">Individual-Level Consumer Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/zip-code-level-consumer-data">Zip-Code Level Consumer Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/b2b-data">B2B Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/b2b-contact-data">B2B Contact Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/b2b-leads-data">B2B Leads Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/b2b-intent-data">B2B Intent Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/b2b-marketing-data">B2B Marketing Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/firmographic-data">Firmographic Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/technographic-data">Technographic Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/business-ownership-data">Business Ownership Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/company-data">Company Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/job-postings-data">Job Postings Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/salary-data">Salary Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/employee-data">Employee Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/b2b-data-uk">UK B2B Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/identity-data">Identity Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/consumer-identity-data">Consumer Identity Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/identity-graph-data">Identity Graph Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/cross-device-identity-data-845459ee-d2e8-4b16-bfe9-053b29f93250">Cross-Device Identity Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/deterministic-identity-data">Deterministic Identity Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/first-party-identity-data">First-Party Identity Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/identity-data-us">Identity Data US</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/identity-data-latam">Identity Data LATAM</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/identity-data-eu">Identity Data EU</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/transport-logistics-data">Transport and Logistics Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/traffic-data">Traffic Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/trucking-fleet-data">Trucking Fleet Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/aviation-data">Aviation Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/road-data">Road Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/freight-data">Freight Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/trade-data">Trade Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/maritime-data">Maritime Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/environmental-data">Environmental Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/weather-data">Weather Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/climate-data">Climate Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/air-quality-index">Air Quality Index</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/pollen-data">Pollen Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/wildfires-data">Wildfires Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/marine-data">Marine Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/water-data">Water Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/land-use-data">Land Use Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/geological-data">Geological Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/surface-data">Surface Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/atmosphere-data">Atmosphere Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/ionospheric-data">Ionospheric Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/thermosphere-data">Thermosphere Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/credit-rating-data">Credit Rating Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/corporate-credit-rating-data">Corporate Credit Rating Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/bank-credit-rating-data">Bank Credit Rating Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/financial-institution-credit-rating-data">Financial Institution Credit Rating Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/sovereign-credit-rating-data">Sovereign Credit Rating Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/bond-credit-rating-data">Bond Credit Rating Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/corporate-loan-data">Corporate Loan Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/real-estate-data">Real Estate Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/real-estate-market-data">Real Estate Market Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/property-data">Property Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/mortgage-data">Mortgage Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/construction-project-leads-data">Construction Project Leads Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/commercial-real-estate-data">Commercial Real Estate Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/flexible-workspace-data">Flexible Workspace Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/residential-real-estate-data">Residential Real Estate Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/real-estate-valuation-data">Real Estate Valuation Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/public-real-estate-data">Public Real Estate Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/global-real-estate-data">Global Real Estate Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/real-time-real-estate-data">Real-Time Real Estate Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/real-estate-transaction-data">Real Estate Transaction Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/web-data">Web Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/clickstream-data">Clickstream Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/ip-address-data">IP Address Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/web-search-data">Web Search Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/web-activity-data">Web Activity Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/web-browsing-data">Web Browsing Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/web-traffic-data">Web Traffic Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/web-scraping-data">Web Scraping Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/news-data">News Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/semantic-website-data">Semantic Website Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/sentiment-data">Sentiment Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/domain-name-data">Domain Name Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/app-data">Mobile App Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/app-store-data">App Store Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/mobile-app-usage-data">App Usage Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/app-install-data">App Install Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/app-revenue-data">App Revenue Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/app-market-data">App Market Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/app-industry-data">App Industry Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/app-session-data">App Session Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/android-app-data">Android App Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/youtube-data">YouTube Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/legal-data">Legal Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/intellectual-property-data">Intellectual Property Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/patent-data">Patent Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/court-data">Court Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/bankruptcy-data">Bankruptcy Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/litigation-data">Litigation Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/royalty-rates-data">Royalty Rates Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/trademark-data">Trademark Data</a>
+                    </li>
+                </ul>
+              </div>
+              <div class="navbar__link-group">
+                <a class="navbar__link-group-title" href="/data-categories/healthcare-data">Healthcare Data</a>
+    
+                <i class="feather icon icon-chevron-right "></i>
+    
+                <ul>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/patient-data">Patient Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/electronic-health-record-ehr-data">Electronic Health Record (EHR) Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/wearables-data">Wearables Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/clinical-data">Clinical Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/healthcare-provider-hcp-data">Healthcare Provider (HCP) Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/medical-imagery-data">Medical Imagery Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/pharma-data">Pharma Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/telemedicine-data">Telemedicine Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/medical-claims-data">Medical Claims Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/covid-19-data">COVID-19 Data</a>
+                    </li>
+                    <li>
+                      <a class="navbar__link-group-item" href="/data-categories/x-ray-data">Xray Data</a>
+                    </li>
+                </ul>
+              </div>
+    
+          </div>
+    
+          <div class="navbar__sub-menu-footer">
+            <a href="/data-categories">
+              Browse all data categories
+              <i class="feather icon icon-arrow-right m-r-none m-l-base"></i>
+    </a>      </div>
+    </div></div>
+        <a class="navbar__item" href="/users/sign_up?sign_up_type=provider"><div class="navbar__item-content"><span class="navbar__item-title">List your Data</span></div></a>
+    </nav><div class="slide-in-overlay"></div>
+    
+        <nav class="navbar__menu navbar__menu--compact">
+    
+        <div class="navbar__item navbar__sub-menu-toggle tablet-landscape-hidden" data-controller="sub-menu-toggle"><div class="navbar__item-content"><span class="navbar__item-title">    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2.4335" y="4.6" width="12.1333" height="9.46667" rx="1.4" stroke="#5C7284" stroke-width="1.2"></rect>
+    <line x1="2.5" y1="9.4" x2="14.5" y2="9.4" stroke="#5C7284" stroke-width="1.2"></line>
+    <path d="M6.5 4.66667V3C6.5 2.44772 6.94772 2 7.5 2H9.5C10.0523 2 10.5 2.44772 10.5 3V4.66667" stroke="#5C7284" stroke-width="1.2"></path>
+    </svg>
+    
+        Inquiries
+    </span></div><div class="navbar__sub-menu navbar__sub-menu--slim"><div class="navbar__authentication-sub-menu"><div class="navbar__authentication-sub-menu-title">Track your inquiries</div><div class="navbar__authentication-sub-menu-subtitle">Keep an eye on all of your contacted Providers.</div><a class="small primary rounded button" href="/users/sign_up">Create Account</a><a class="small primary outlined rounded button" href="/users/sign_in">Sign in</a></div></div></div>
+    
+    
+        <div class="navbar__item navbar__sub-menu-toggle tablet-landscape-hidden" data-controller="sub-menu-toggle"><div class="navbar__item-content"><span class="navbar__item-title">    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2.4335" y="1.93337" width="12.1333" height="12.1333" rx="2.4" stroke="#5C7284" stroke-width="1.2"></rect>
+    <path d="M2.5 9.33337H6.08859C6.13448 9.33337 6.17425 9.36439 6.18646 9.40862C6.3759 10.0952 6.95816 11.3334 8.5 11.3334C10.0418 11.3334 10.6241 10.0952 10.8135 9.40862C10.8257 9.36439 10.8655 9.33337 10.9114 9.33337H14.5" stroke="#5C7284" stroke-width="1.2"></path>
+    </svg>
+    
+        Postings
+    </span></div><div class="navbar__sub-menu navbar__sub-menu--slim"><div class="navbar__authentication-sub-menu"><div class="navbar__authentication-sub-menu-title">Track your Postings</div><div class="navbar__authentication-sub-menu-subtitle">View your posted requests for data.</div><a class="small primary rounded button" href="/users/sign_up">Create Account</a><a class="small primary outlined rounded button" href="/users/sign_in">Sign in</a></div></div></div>
+    
+    
+    
+        <div class="navbar__item navbar__sub-menu-toggle tablet-landscape-hidden" data-controller="sub-menu-toggle"><div class="navbar__item-content"><span class="navbar__item-title">    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.63012 8.92731C5.20028 8.92731 4.85107 8.5781 4.85107 8.14826C4.85107 7.71969 5.20028 7.37048 5.63012 7.37048C6.05996 7.37048 6.40917 7.71969 6.40917 8.14826C6.40917 8.5781 6.05996 8.92731 5.63012 8.92731ZM8.65869 8.92731C8.22885 8.92731 7.87964 8.5781 7.87964 8.14826C7.87964 7.71969 8.22885 7.37048 8.65869 7.37048C9.08853 7.37048 9.43774 7.71969 9.43774 8.14826C9.43774 8.5781 9.08853 8.92731 8.65869 8.92731ZM10.9083 8.14826C10.9083 8.5781 11.2575 8.92731 11.6873 8.92731C12.1172 8.92731 12.4664 8.5781 12.4664 8.14826C12.4664 7.71969 12.1172 7.37048 11.6873 7.37048C11.2575 7.37048 10.9083 7.71969 10.9083 8.14826Z" fill="#5C7284"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5135 1.33337C4.64016 1.33337 1.8335 4.49745 1.8335 8.01006C1.8335 9.13174 2.16016 10.2861 2.7335 11.3411C2.84016 11.5153 2.8535 11.735 2.78016 11.9426L2.3335 13.4382C2.2335 13.7987 2.54016 14.0651 2.88016 13.9583L4.22683 13.5584C4.5935 13.4382 4.88016 13.5911 5.22016 13.7987C6.1935 14.3723 7.40683 14.6667 8.50016 14.6667C11.8068 14.6667 15.1668 12.1095 15.1668 7.99003C15.1668 4.43736 12.3002 1.33337 8.5135 1.33337Z" stroke="#5C7284" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    
+        Messages
+    </span></div><div class="navbar__sub-menu navbar__sub-menu--slim"><div class="navbar__authentication-sub-menu"><div class="navbar__authentication-sub-menu-title">View Messages</div><div class="navbar__authentication-sub-menu-subtitle">Keep track of all your conversations on Datarade in real-time.</div><a class="small primary rounded button" href="/users/sign_up">Create Account</a><a class="small primary outlined rounded button" href="/users/sign_in">Sign in</a></div></div></div>
+    
+        <a class="navbar__item" href="/users/sign_in"><div class="navbar__item-content">
+          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.8332 14.6667V13.1111C13.8332 12.286 13.5522 11.4947 13.0521 10.9112C12.552 10.3278 11.8737 10 11.1665 10H5.83317C5.12593 10 4.44765 10.3278 3.94755 10.9112C3.44746 11.4947 3.1665 12.286 3.1665 13.1111V14.6667" stroke="#1371C3" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M8.50016 7.33333C9.97292 7.33333 11.1668 6.13943 11.1668 4.66667C11.1668 3.19391 9.97292 2 8.50016 2C7.0274 2 5.8335 3.19391 5.8335 4.66667C5.8335 6.13943 7.0274 7.33333 8.50016 7.33333Z" stroke="#1371C3" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    
+          Sign in / Join
+    </div></a></nav>
+    
+      </div>
+
+
+
+</div> -->
+
+
+<div [ngStyle]="{ 'margin-bottom': '520px'}" class='contentMain'>
+    <router-outlet></router-outlet>
+    <!-- <div class="wrap">
+        <div class="search">
+           <input type="text" class="searchTerm" placeholder="What are you looking for?">
+           <button type="submit" class="searchButton">
+             <i class="fa fa-search"></i>  
+          </button>
+        </div>
+     </div> -->
+</div>
+
+
+<!-- <mat-divider></mat-divider> -->
+<div class='footer'>
+    <!-- <footer> -->
+        &copy; All rights reserved 2021
+    <!-- </footer> -->
+    
+</div>

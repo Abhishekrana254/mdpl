@@ -1,0 +1,21 @@
+<!-- <p>search-result works!</p> -->
+<br>
+
+<div *ngIf="data_list">
+    <div *ngFor="let data of data_list">
+      <mat-card style="width: 20rem;">
+         <mat-card-content>
+           <mat-card-title>
+             <h5> {{data.id}}. {{data.name}}</h5>
+           </mat-card-title>
+           <mat-card-subtitle>{{data.name}}</mat-card-subtitle>
+           
+           <a [routerLink]="['/description']" [queryParams]="{ id : data.id, name: data.name,
+             file_name: data.file_name }" 
+           mdbBtn color="primary" >
+            Data Description 
+         </a>
+         </mat-card-content>
+       </mat-card>
+    </div>
+</div>
