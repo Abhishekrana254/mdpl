@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "livebuild": "ng build --output-path /opt/lampp/htdocs/mdpl --output-hashing none"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "@babel/runtime": "^7.15.4",
     "@types/socket.io-client": "^3.0.0",
     "aws-amplify": "^4.2.8",
+    "esbuild": "^0.12.24",
     "file-saver": "^2.0.5",
     "rxjs": "~6.6.0",
     "socket.io-client": "^4.3.2",
@@ -34,7 +36,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.3",
-    "@angular/cli": "^12.2.5",
+    "@angular/cli": "^12.2.13",
     "@angular/compiler-cli": "~12.2.0",
     "@types/file-saver": "^2.0.3",
     "@types/jasmine": "~3.8.0",

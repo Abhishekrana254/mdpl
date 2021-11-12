@@ -28,10 +28,10 @@ const routes: Routes = [
     path: 'list-data',
     component: ListDataComponent
   },
-  {
-    path: 'conversations',
-    component: ConversationsComponent
-  }
+  // {
+  //   path: 'conversations',
+  //   component: ConversationsComponent
+  // }
   ]
 },
 
