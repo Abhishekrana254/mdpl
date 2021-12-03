@@ -10,3 +10,4 @@ pat
 /dataAggUI/node_modules_old/
 dataAggUI/node_modules/
 /docs/
+/dataagg_backend/dataagg_backend/__pycache__
