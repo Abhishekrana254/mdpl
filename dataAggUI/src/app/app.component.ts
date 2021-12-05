@@ -17,13 +17,14 @@ export class AppComponent {
 
   ngOnInit() {
     onAuthUIStateChange((authState, authData) => {
+      
       this.authState = authState;
       this.user = authData as CognitoUserInterface;
 
       // console.log('user', this.user.username, this.user.attributes);
       // this.username = this.user.username;
       let username :string = this.user.username!; 
-      localStorage.setItem('username', username);
+      localStorage.setItem('username', username);      
       this.ref.detectChanges();
     })
   }

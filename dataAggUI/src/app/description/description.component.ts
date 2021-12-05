@@ -31,7 +31,12 @@ export class DescriptionComponent implements OnInit {
   readonly rootUrl = environment.apiBaseUrl;
   constructor(private route: ActivatedRoute, private http: HttpClient,
               @Inject(DOCUMENT) private document: Document,
-              private elementRef: ElementRef) { }
+              private elementRef: ElementRef) { 
+                if (localStorage.getItem('desc_refreshed') == 'false') {
+                  localStorage.setItem('desc_refreshed', 'true');
+                  window.location.reload()
+                }
+              }
 
   ngOnDestroy() {
     this.elementRef.nativeElement.remove();

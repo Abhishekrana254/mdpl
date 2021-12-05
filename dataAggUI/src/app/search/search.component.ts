@@ -67,7 +67,7 @@ export class SearchComponent implements OnInit {
       // mdbBtn color="primary" >
       //  Data Description 
       // </a>
-
+      localStorage.setItem('refreshed', 'false');
       this.router.navigate(['/search-result'], {queryParams: { data_list: JSON.stringify(this.data_list) }})
         
     },
