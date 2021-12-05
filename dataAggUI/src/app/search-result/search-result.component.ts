@@ -38,6 +38,7 @@ export class SearchResultComponent implements OnInit {
     // alert(localStorage.getItem('refreshed'));
     if (localStorage.getItem('refreshed') == 'false') {
       localStorage.setItem('refreshed', 'true');
+      // alert(window.location);
       window.location.reload()
     }
 
