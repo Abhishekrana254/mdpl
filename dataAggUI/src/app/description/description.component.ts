@@ -20,7 +20,7 @@ export class DescriptionComponent implements OnInit {
   id: String;
   name: String;
   file_name: String;
-  download_data_status: Boolean = false;
+  download_data_status: Boolean = true;
   provider = 'US Healthcare Ministry';
 
   requestCallForm = new FormGroup({
