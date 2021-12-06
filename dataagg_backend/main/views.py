@@ -18,10 +18,13 @@ from django.contrib.auth import authenticate
 
 import json
 import copy
+import os
 
 from django.forms.models import model_to_dict
 from django.db.models import Q
 
+
+PROJECT_PATH = os.path.abspath(os.path.dirname(__name__))
 
 # search in data
 @api_view(('GET', 'POST'))
@@ -125,7 +128,9 @@ def download_data(request):
     print('req', req)
     file_name = req['file_name']
     file_path = '/home/abhishek/Desktop/DataAgg/dataagg_backend/data/' + file_name
-
+    print('ori file_path', file_path)
+    file_path = f'{PROJECT_PATH}/data/{file_name}'
+    print('file_path', file_path)
     try:
         with open(file_path, 'rb') as tmp:
 
